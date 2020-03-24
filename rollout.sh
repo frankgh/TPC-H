@@ -38,7 +38,7 @@ create_directories()
 
 create_directories
 echo "############################################################################"
-echo "TPC-H Script for Pivotal Greenplum Database and Pivotal HAWQ."
+echo "TPC-H Script for Pivotal Greenplum PXF."
 echo "############################################################################"
 echo ""
 echo "############################################################################"

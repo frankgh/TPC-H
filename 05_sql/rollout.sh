@@ -29,7 +29,7 @@ for i in $(ls $PWD/*.tpch.*.sql); do
 		start_log
 		if [ "$EXPLAIN_ANALYZE" == "false" ]; then
 			echo "psql -v ON_ERROR_STOP=1 -A -q -t -P pager=off -v EXPLAIN_ANALYZE=\"\" -f $i | wc -l"
-			tuples=$(psql -v ON_ERROR_STOP=1 -A -q -t -P pager=off -v EXPLAIN_ANALYZE="" -f $i | wc -l; exit ${PIPESTATUS[0]})
+			tuples=$(psql -v ON_ERROR_STOP=1 -A -q -t -P pager=off -v EXPLAIN_ANALYZE="" -f $i | wc -l || echo -1)
 		else
 			myfilename=$(basename $i)
 			mylogfile=$PWD/../log/$myfilename.single.explain_analyze.log
